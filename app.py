@@ -8,10 +8,10 @@ from datetime import datetime
 import dotenv
 dotenv.load_dotenv()
 
-st.set_page_config(page_title="AI Research Assistant", layout="centered")
+st.set_page_config(page_title="People Team AI Assistant", layout="centered")
 
-st.title("🤖 Dwayne AI Research Assistant")
-st.markdown("Ask me anything about Transformers, Attention Mechanisms, or recent ML papers!")
+st.title("🤖 DigitalOcean People Team AI Assistant")
+st.markdown("Ask me anything about HR policies, benefits, or People Team processes!")
 
 # Session state
 if "messages" not in st.session_state:
@@ -34,7 +34,7 @@ with st.sidebar:
 
         transcript = "\n\n".join([
             f"You ({m.get('timestamp', 'unknown')}): {m['content']}" if m["role"] == "user"
-            else f"Dwayne AI ({m.get('timestamp', 'unknown')}): {m['content']}"
+            else f"People Team AI ({m.get('timestamp', 'unknown')}): {m['content']}"
             for m in st.session_state.messages
         ])
         if st.download_button(
@@ -54,7 +54,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # User prompt input
-if prompt := st.chat_input("Type your research question..."):
+if prompt := st.chat_input("Type your HR or People Team question..."):
     timestamp_now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     st.session_state.messages.append({"role": "user", "content": prompt, "timestamp": timestamp_now})
     with st.chat_message("user"):
