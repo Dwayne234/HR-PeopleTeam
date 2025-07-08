@@ -1,6 +1,6 @@
-# GenAI Research Assistant
+# HR - PeopleTeam Agent
 
-A Streamlit-based AI research assistant that can answer questions about Transformers, Attention Mechanisms, and recent ML papers.
+A Streamlit-based AI Agent that can answer questions about DigitalOcean HR.
 
 ## Features
 
